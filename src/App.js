@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Customers from './Customers'
+import Customers from './components/Customers'
 import { BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom';
 
 
 class App extends Component {
   render() {
-    console.log("Host URL"+process.env.PUBLIC_URL);
     return (
 
-      <Router basename={process.env.PUBLIC_URL}>
+      <Router>
         <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
