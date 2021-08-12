@@ -33,30 +33,32 @@ class Customers extends Component {
       return <p>Loading data</p>;
     }
 
-    return (<div className="addmargin">
-      <div className="col-md-3">
-        {
-          this.state.customerList && this.state.customerList.data.map(customer => <Card key={customer.name} className="centeralign">
-            <Card.Heading>
-              <Card.Title componentClass="h3">{customer.name}</Card.Title>
-            </Card.Heading>
-            <Card.Body>
-              <p>{customer.email}</p>
-              <p>{customer.phone}</p>
-              <Button onClick={() => this.setState({selectedCustomer: customer.id})}>
+    return (
+      <div className="addmargin">
+        <div className="col-md-3">
+          {
+            this.state.customerList && this.state.customerList.data.map(customer => <Card key={customer.name} className="centeralign">
+              <Card.Header>
+                <Card.Title componentClass="h2">{customer.name}</Card.Title>
+              </Card.Header>
+              <Card.Body>
+                <p>{customer.email}</p>
+                <p>{customer.phone}</p>
+                <Button onClick={() => this.setState({selectedCustomer: customer.id})}>
 
-                Click to View Details
+                  Click to View Details
 
-              </Button>
+                </Button>
 
-            </Card.Body>
-          </Card>)
-        }
+              </Card.Body>
+            </Card>)
+          }
+        </div>
+        <div className="col-md-6">
+          <CustomerDetails val={this.state.selectedCustomer} />
+        </div>
       </div>
-      <div className="col-md-6">
-        <CustomerDetails val={this.state.selectedCustomer}/>
-      </div>
-    </div>);
+    );
   }
 
 }

@@ -34,23 +34,33 @@ export default class CustomerDetails extends Component {
   render() {
     if (!this.state.customerDetails)
       return (<p>Loading Data</p>)
-    return (<div className="customerdetails">
-      <Card className="centeralign">
-        <Card.Heading>
-          <Card.Title componentClass="h3">{this.state.customerDetails.data.name}</Card.Title>
-        </Card.Heading>
-        <Card.Body>
-          <p>Name : {this.state.customerDetails.data.name}</p>
-          <p>Email : {this.state.customerDetails.data.email}</p>
-          <p>Phone : {this.state.customerDetails.data.phone}</p>
-          <p>City : {this.state.customerDetails.data.city}</p>
-          <p>State : {this.state.customerDetails.data.state}</p>
-          <p>Country : {this.state.customerDetails.data.country}</p>
-          <p>Organization : {this.state.customerDetails.data.organization}</p>
-          <p>Job Profile : {this.state.customerDetails.data.jobProfile}</p>
-          <p>Additional Info : {this.state.customerDetails.data.additionalInfo}</p>
-        </Card.Body>
-      </Card>
-    </div>)
+    return (
+      <div className="customerdetails">
+          <Card
+            lassName="centeralign"
+            bg={`Secondary`}
+            text= "dark"
+          >
+          <Card.Header>
+            <Card.Title componentClass="h2">
+              {this.state.customerDetails.data.name}
+            </Card.Title>
+          </Card.Header>
+          <Card.Body>
+            <p>Name : {this.state.customerDetails.data.name}</p>
+            <p>Email : {this.state.customerDetails.data.email}</p>
+            <p>Phone : {this.state.customerDetails.data.phone}</p>
+            <p>City : {this.state.customerDetails.data.city}</p>
+            <p>State : {this.state.customerDetails.data.state}</p>
+            <p>Country : {this.state.customerDetails.data.country}</p>
+            <p>Organization : {this.state.customerDetails.data.organization}</p>
+            <p>Job Profile : {this.state.customerDetails.data.jobProfile}</p>
+            <p>
+              Additional Info : {this.state.customerDetails.data.additionalInfo}
+            </p>
+          </Card.Body>
+        </Card>
+      </div>
+    );
   }
 }
